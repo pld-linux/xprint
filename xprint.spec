@@ -2,7 +2,8 @@
 %define		_rel		008
 %define		_init_ver	0.2
 
-Summary:	Xprint
+Summary:	Xprint - advanced print API for X11-based applications
+Summary(pl):	Xprint - zaawansowane API do drukowania dla aplikacji opartych na X11
 Name:		xprint
 Version:	0.0.%{_rel}
 Release:	1
@@ -11,33 +12,46 @@ Group:		X11/XFree86
 Source0:	http://puck.informatik.med.uni-giessen.de/download/%{name}_mozdev_org_source-%{_date}-trunk.tar.gz
 Source1:	xprintscripts-%{_init_ver}.tgz
 Requires:	%{name}-initrc
-URL:		http://xprint.mozdev.org
+URL:		http://xprint.mozdev.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
 
 %description
-Xprint provides an advanched print API for X11-based
-(incl. CDE, Xt/Motif-, Xt/LessTif-, Xt/Athena-, Qt- and
-Mozilla-based) applications.
+Xprint provides an advanced print API for X11-based (incl. CDE,
+Xt/Motif-, Xt/LessTif-, Xt/Athena-, Qt- and Mozilla-based)
+applications.
+
+%description -l pl
+Xprint udostêpnia zaawansowane API do drukowania dla aplikacji
+opartych na X11 (w tym opartych na CDE, Xt/Motifie, Xt/LessTifie,
+Xt/Athenie, Qt, Mozilli).
 
 %package initrc
 Summary:	Init scripts for Xprint servers
+Summary(pl):	Skrypty startowe dla serwerów Xprint
 Group:		X11/XFree86
 Version:	%{_init_ver}
 Requires:	%{name}-shellscript
 
 %description initrc
-Init scripts for Xprint servers
+Init scripts for Xprint servers.
+
+%description initrc -l pl
+Skrypty startowe dla serwerów Xprint.
 
 %package shellscript
 Summary:	Init scripts for Xprint servers
+Summary(pl):	Skrypt inicjalizuj±cy dla serwerów Xprint
 Group:		X11/XFree86
 Version:	%{_init_ver}
 
 %description shellscript
-Init scripts for Xprint servers
+Init scripts for Xprint servers.
+
+%description shellscript -l pl
+Skrypt inicjalizuj±cy dla serwerów Xprint.
 
 %prep
 %setup -q -n %{name}
@@ -85,10 +99,11 @@ rm -rf $RPM_BUILD_ROOT
 %files initrc
 %defattr(644,root,root,755)
 %dir %{_sysconfdir}/sysconfig/Xprint
-%attr(744,root,root) %{_sysconfdir}/rc.d/init.d/xprint
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/sysconfig/Xprint/*
+%attr(754,root,root) /etc/rc.d/init.d/xprint
+%dir /etc/sysconfig/Xprint
+%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/Xprint/*
 
 %files shellscript
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_sysconfdir}/profile.d/*
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/sysconfig/xprint
+%attr(755,root,root) /etc/profile.d/*
+%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/xprint

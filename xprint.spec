@@ -1,14 +1,15 @@
 %define		_date		2002-12-01
 %define		_rel		008
+%define		_init_ver	0.2
 
 Summary:	Xprint
 Name:		xprint
 Version:	0.0.%{_rel}
-Release:	0.1
+Release:	1
 License:	MIT
 Group:		X11/XFree86
 Source0:	http://puck.informatik.med.uni-giessen.de/download/%{name}_mozdev_org_source-%{_date}-trunk.tar.gz
-Source1:	xprintscripts.tgz
+Source1:	xprintscripts-%{_init_ver}.tgz
 Requires:	%{name}-initrc
 URL:		http://xprint.mozdev.org
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -24,7 +25,7 @@ Mozilla-based) applications.
 %package initrc
 Summary:	Init scripts for Xprint servers
 Group:		X11/XFree86
-Version:	0.1
+Version:	%{_init_ver}
 Requires:	%{name}-shellscript
 
 %description initrc
@@ -33,7 +34,7 @@ Init scripts for Xprint servers
 %package shellscript
 Summary:	Init scripts for Xprint servers
 Group:		X11/XFree86
-Version:	0.1
+Version:	%{_init_ver}
 
 %description shellscript
 Init scripts for Xprint servers

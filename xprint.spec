@@ -13,8 +13,6 @@ PreReq:		%{name}-initrc
 URL:		http://xprint.mozdev.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Xprint provides an advanced print API for X11-based (incl. CDE,

@@ -10,7 +10,9 @@ License:	MIT
 Group:		X11/XFree86
 Source0:	http://puck.informatik.med.uni-giessen.de/download/%{name}_mozdev_org_source-%{_date}-trunk.tar.gz
 # Source0-md5:	a196f07e60c381263d252f3a53f9f036
-PreReq:		%{name}-initrc
+PreReq:		rc-scripts
+PreReq:		xprint-initrc
+Requires(post,preun):	/sbin/chkconfig
 URL:		http://xprint.mozdev.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,10 +41,10 @@ cd ../..
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_bindir}
-install src/xprint_main/xc/programs/Xserver/Xprt $RPM_BUILD_ROOT/%{_bindir}
+install -d $RPM_BUILD_ROOT%{_bindir}
+install src/xprint_main/xc/programs/Xserver/Xprt $RPM_BUILD_ROOT%{_bindir}
 
-cd src/xprint_main/xc/programs/Xserver/XpConfig/
+cd src/xprint_main/xc/programs/Xserver/XpConfig
 DIRS=`find C -type d | egrep -v "CVS|Imakefile|Makefile"`
 for DIR in $DIRS; do mkdir -p $RPM_BUILD_ROOT/etc/X11/xserver/$DIR; done
 FILES=`find C -type f | egrep -v "CVS|Imakefile|Makefile"`

@@ -9,6 +9,7 @@ Release:	2
 License:	MIT
 Group:		X11/XFree86
 Source0:	http://puck.informatik.med.uni-giessen.de/download/%{name}_mozdev_org_source-%{_date}-trunk.tar.gz
+# Source0-md5:	a196f07e60c381263d252f3a53f9f036
 PreReq:		%{name}-initrc
 URL:		http://xprint.mozdev.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

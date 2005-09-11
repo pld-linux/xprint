@@ -1,6 +1,5 @@
 %define		_date		2002-12-01
 %define		_rel		008
-
 Summary:	Xprint - advanced print API for X11-based applications
 Summary(pl):	Xprint - zaawansowane API do drukowania dla aplikacji opartych na X11
 Name:		xprint
@@ -10,8 +9,8 @@ License:	MIT
 Group:		X11/XFree86
 Source0:	http://puck.informatik.med.uni-giessen.de/download/%{name}_mozdev_org_source-%{_date}-trunk.tar.gz
 # Source0-md5:	a196f07e60c381263d252f3a53f9f036
-PreReq:		rc-scripts
-PreReq:		xprint-initrc
+Requires:	rc-scripts
+Requires:	xprint-initrc
 Requires(post,preun):	/sbin/chkconfig
 URL:		http://xprint.mozdev.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -42,6 +41,7 @@ cd ../..
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
+
 install src/xprint_main/xc/programs/Xserver/Xprt $RPM_BUILD_ROOT%{_bindir}
 
 cd src/xprint_main/xc/programs/Xserver/XpConfig

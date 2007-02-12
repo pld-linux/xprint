@@ -1,7 +1,7 @@
 %define		_date		2002-12-01
 %define		_rel		008
 Summary:	Xprint - advanced print API for X11-based applications
-Summary(pl):	Xprint - zaawansowane API do drukowania dla aplikacji opartych na X11
+Summary(pl.UTF-8):   Xprint - zaawansowane API do drukowania dla aplikacji opartych na X11
 Name:		xprint
 Version:	0.0.%{_rel}
 Release:	2
@@ -21,8 +21,8 @@ Xprint provides an advanced print API for X11-based (incl. CDE,
 Xt/Motif-, Xt/LessTif-, Xt/Athena-, Qt- and Mozilla-based)
 applications.
 
-%description -l pl
-Xprint udostêpnia zaawansowane API do drukowania dla aplikacji
+%description -l pl.UTF-8
+Xprint udostÄ™pnia zaawansowane API do drukowania dla aplikacji
 opartych na X11 (w tym opartych na CDE, Xt/Motifie, Xt/LessTifie,
 Xt/Athenie, Qt, Mozilli).
 

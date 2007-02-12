@@ -1,7 +1,7 @@
 %define		_date		2002-12-01
 %define		_rel		008
 Summary:	Xprint - advanced print API for X11-based applications
-Summary(pl.UTF-8):   Xprint - zaawansowane API do drukowania dla aplikacji opartych na X11
+Summary(pl.UTF-8):	Xprint - zaawansowane API do drukowania dla aplikacji opartych na X11
 Name:		xprint
 Version:	0.0.%{_rel}
 Release:	2
